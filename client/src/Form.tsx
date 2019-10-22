@@ -21,6 +21,7 @@ const Form = ({ setMessage }: Props): JSX.Element => {
   };
 
   const submitForm = async (event: React.FormEvent): Promise<void> => {
+    event.preventDefault();
     const response = await fetch("/submit", {
       method: "POST",
       body: JSON.stringify({ name, age, favouriteColour }),
@@ -31,7 +32,6 @@ const Form = ({ setMessage }: Props): JSX.Element => {
     response.text().then((text: string): void => {
       setMessage(text);
     });
-    event.preventDefault();
   };
 
   return (
