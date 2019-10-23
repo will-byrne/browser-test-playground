@@ -17,7 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "nightwatch": "nightwatch"
+    "nightwatch": "nightwatch",
+    "testcafe": "yarn run testcafe chrome tests/testcafe/form.test.js"
   },
   "eslintConfig": {
     "extends": "react-app"
