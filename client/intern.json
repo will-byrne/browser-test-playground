@@ -1,0 +1,5 @@
+{
+  "functionalSuites": "tests/intern/**/*.js",
+  "environments": ["node", "chrome"]
+}
+
