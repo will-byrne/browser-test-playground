@@ -18,7 +18,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "nightwatch": "nightwatch",
-    "testcafe": "yarn run testcafe chrome tests/testcafe/form.test.js"
+    "testcafe-exec": "yarn run testcafe chrome tests/testcafe/form.test.js",
+    "wdio-exec": "yarn wdio wdio.conf.js",
+    "codeceptjs-exec": "yarn codeceptjs run --steps"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,11 +42,20 @@
     "@types/faker": "^4.1.6",
     "@types/nightwatch": "^1.1.1",
     "@types/puppeteer": "^1.20.2",
+    "@wdio/cli": "^5.16.7",
+    "@wdio/local-runner": "^5.16.7",
+    "@wdio/mocha-framework": "^5.16.5",
+    "@wdio/selenium-standalone-service": "^5.16.5",
+    "@wdio/spec-reporter": "^5.16.5",
+    "@wdio/sync": "^5.16.5",
     "chromedriver": "^77.0.0",
+    "codeceptjs": "^2.3.5",
     "faker": "^4.1.0",
     "intern": "^4.5.0",
     "nightwatch": "^1.2.4",
     "puppeteer": "^1.20.0",
-    "testcafe": "^1.6.0"
+    "testcafe": "^1.6.0",
+    "wdio-chromedriver-service": "^5.0.2",
+    "webdriverio": "^5.16.7"
   }
 }
