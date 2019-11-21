@@ -11,7 +11,6 @@ describe("Frorm.tsx", () => {
     $("button").click();
     const response = $("h2");
     response.waitForExist(5000);
-    debugger;
     assert(
       response.getText(),
       "Recieved Sparkles the Unicorn who is 9000 years old and their favourite colour is glitter"
