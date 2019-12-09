@@ -21,7 +21,7 @@ jobs:
       run: yarn 
       working-directory: ./client
     - name: build and run client
-      run: yarn && yarn start &
+      run: yarn start &
       working-directory: ./client
       env: 
         BROWSER: none
@@ -29,13 +29,13 @@ jobs:
       run: yarn
       working-directory: ./server
     - name: build and run server
-      run: yarn && yarn start:dev &
+      run: yarn start:dev &
       working-directory: ./server
     - name: run tests
       run: |
         yarn wait-port localhost:3000 &&
         yarn wait-port localhost:4000 &&
-        yarn test:nightwatch
+        yarn test:nightwatch --headless
       working-directory: ./client
       env:
         BROWSER: chrome
