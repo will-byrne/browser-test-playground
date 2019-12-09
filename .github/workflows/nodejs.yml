@@ -22,9 +22,10 @@ jobs:
         cd client
         yarn
         cd ../server
-        yarn && yarn start &
+        yarn
+        yarn start:dev &
         cd ../client
-        yarn testcafe
+        yarn nightwatch
         
       env:
         CI: true
