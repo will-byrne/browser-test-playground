@@ -64,6 +64,10 @@ const Form = ({ setMessage }: Props): JSX.Element => {
           <option value="glitter">Glitter</option>
         </select>
       </div>
+      <div>
+        <label htmlFor="comments">Comments</label>
+        <textarea name="comments" rows={10}/>
+      </div>
       <button type="submit">Submit</button>
     </form>
   );

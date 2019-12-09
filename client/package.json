@@ -3,22 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/jest": "24.0.19",
-    "@types/node": "12.11.2",
-    "@types/react": "16.9.9",
-    "@types/react-dom": "16.9.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-scripts": "3.2.0",
-    "typescript": "3.6.4"
+    "typescript": "^3.5.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "nightwatch": "nightwatch",
-    "testcafe-exec": "yarn run testcafe chrome tests/testcafe/form.test.js",
+    "test:nightwatch": "tsc -p tsconfig.json && yarn nightwatch",
+    "test:testcafe": "yarn run testcafe chrome tests/testcafe/*.browser.ts",
     "wdio-exec": "yarn wdio wdio.conf.js",
     "codeceptjs-exec": "yarn codeceptjs run --steps"
   },
@@ -39,6 +35,10 @@
   },
   "proxy": "http://localhost:4000",
   "devDependencies": {
+    "@types/jest": "24.0.19",
+    "@types/node": "12.11.2",
+    "@types/react": "^16.9.1",
+    "@types/react-dom": "16.8.5",
     "@types/faker": "^4.1.6",
     "@types/nightwatch": "^1.1.1",
     "@types/puppeteer": "^1.20.2",
@@ -49,12 +49,11 @@
     "@wdio/spec-reporter": "^5.16.5",
     "@wdio/sync": "^5.16.5",
     "chromedriver": "^77.0.0",
-    "codeceptjs": "^2.3.5",
     "faker": "^4.1.0",
     "intern": "^4.5.0",
     "nightwatch": "^1.2.4",
     "puppeteer": "^1.20.0",
-    "testcafe": "^1.6.0",
+    "testcafe": "^1.7.0",
     "wdio-chromedriver-service": "^5.0.2",
     "webdriverio": "^5.16.7"
   }
