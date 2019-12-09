@@ -25,7 +25,7 @@ jobs:
         yarn
         yarn start:dev &
         cd ../client
-        yarn nightwatch
+        yarn start && yarn nightwatch
         
       env:
         CI: true
