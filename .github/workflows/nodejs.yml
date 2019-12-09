@@ -17,11 +17,17 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: yarn client
+      run: yarn 
+      working-directory: ./client
     - name: build and run client
       run: yarn && yarn start &
       working-directory: ./client
       env: 
         BROWSER: none
+    - name: yarn server
+      run: yarn
+      working-directory: ./server
     - name: build and run server
       run: yarn && yarn start:dev &
       working-directory: ./server
