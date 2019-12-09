@@ -29,6 +29,7 @@ jobs:
       run: |
         yarn wait-port localhost:3000 &&
         yarn wait-port localhost:4000 &&
-        yarn test:nightwatch                
+        yarn test:nightwatch
+      working-directory: ./client
       env:
         BROWSER: chrome
