@@ -17,16 +17,20 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - name: build and start client
       run: |
         cd client
         yarn
+        yarn start
+    - name: build and start server
+      run: |
         cd ../server
         yarn
-        yarn start:dev &
+        yarn start:dev
+    - name: browser test
+      run: |        
         cd ../client
-        yarn start && yarn nightwatch
-        
+        yarn start && yarn nightwatch                
       env:
         CI: true
         BROWSER: chrome
