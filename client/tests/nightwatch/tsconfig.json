@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2015",
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "typeRoots": ["../../node_modules/@types", "../../0types"]
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "typings", "reports"]
+}
