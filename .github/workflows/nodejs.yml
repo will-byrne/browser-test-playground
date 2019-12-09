@@ -17,18 +17,18 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: build and test
+    - name: build and run client
+      run: yarn && yarn start &
+      working-directory: ./client
+      env: 
+        BROWSER: none
+    - name: build and run server
+      run: yarn && yarn start:dev &
+      working-directory: ./server
+    - name: run tests
       run: |
-        cd client
-        yarn
-        yarn start &
-        cd ../server
-        yarn
-        yarn start:dev &
-        cd ../client
-        yarn wait-port localhost:3000
-        yarn wait-port localhost:4000
+        yarn wait-port localhost:3000 &&
+        yarn wait-port localhost:4000 &&
         yarn test:nightwatch                
       env:
-        CI: false
         BROWSER: chrome
