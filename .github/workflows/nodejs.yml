@@ -21,7 +21,7 @@ jobs:
       run: |
         cd client
         yarn
-        yarn start &
+        BROWSER=none yarn start &
         cd ../server
         yarn
         yarn start:dev &
