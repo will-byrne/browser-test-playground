@@ -1,4 +1,4 @@
-name: 🦄 BrowserTests
+name: BrowserTests
 
 on: [push]
 
