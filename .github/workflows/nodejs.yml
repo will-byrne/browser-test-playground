@@ -10,6 +10,7 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x]
+        BROWSER: [chrome, firefox]
 
     steps:
     - uses: actions/checkout@v1
@@ -37,5 +38,3 @@ jobs:
     - name: run tests
       run: yarn test:nightwatch --headless
       working-directory: ./client
-      env:
-        BROWSER: chrome
